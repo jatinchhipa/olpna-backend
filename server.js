@@ -1,6 +1,8 @@
 import express from 'express';
 import connectToMongo from './db.js';
 import userroute from './routes/userroute.js';
+import courseroute from './routes/courseroute.js'
+
 import cors from 'cors';
 
 
@@ -14,6 +16,8 @@ app.use(cors());
 
 app.use('/api', userroute);
 
+app.use("/uploads", express.static("uploads"));
+app.use('/' , courseroute);
 
 
 

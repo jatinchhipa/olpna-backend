@@ -32,8 +32,11 @@ router.post('/sign',async(req,res)=>{
         const hashedpassword = await bcrypt.hash(password,salt);
 
         const user = await usermodal.create({
-            name,email,phone,course,
-                                     password:hashedpassword,
+            name,
+            email,
+            phone,
+            course,
+            password:hashedpassword,
         })
 
            res.json({msg:"signup succesfully",user}) 
@@ -95,7 +98,7 @@ router.post('/login', async(req,res)=>{
             res.status(200) .json(user)
 
         }catch(err){
-            res.status(500).json({msg:err.msg});
+            res.status(500).json({msg:err.message});
         }
 
     });
@@ -111,7 +114,7 @@ router.post('/login', async(req,res)=>{
             res.status(200) .json(user)
 
         }catch(err){
-            res.status(500).json({msg:err.msg});
+            res.status(500).json({msg:err.message});
         }
 
     });
@@ -129,7 +132,7 @@ router.post('/login', async(req,res)=>{
                res.status(200).json(edituser) 
 
         }catch(err){
-            res.status(500).json({msg:err.msg});
+            res.status(500).json({msg:err.message});
 
         }
     });
@@ -146,7 +149,7 @@ router.post('/login', async(req,res)=>{
             res.status(200).json({msg:"user delete successfully"})
 
         }catch(err){
-            res.status(500).json({msg:err.msg})
+            res.status(500).json({msg:err.message})
         }
 
     })
