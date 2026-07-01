@@ -4,6 +4,7 @@ import userroute from './routes/userroute.js';
 import courseroute from './routes/courseroute.js'
 
 import cors from 'cors';
+import professorroute from './routes/professorroute.js';
 
 
 
@@ -19,6 +20,7 @@ app.use('/api', userroute);
 app.use("/uploads", express.static("uploads"));
 app.use('/' , courseroute);
 
+app.use('/' , professorroute);
 
 
 

@@ -1,9 +1,8 @@
 import coursemodal from "../models/coursemodal.js";
 
 
-const coursecontrol = async(req,res)=>{
+const createcourse = async(req,res)=>{
 
-    
     try{
         const{courseName,courseDetail,coursePrice,student,courseNumber,courseDuration,courseProfessor,courseDeadline,lectures,language} = req.body;
 
@@ -40,4 +39,4 @@ const coursecontrol = async(req,res)=>{
 
 }
 
-export default coursecontrol;
+export default createcourse;
