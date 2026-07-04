@@ -71,10 +71,14 @@ router.post('/login', async(req,res)=>{
 
         if(isMatch){
             const token = jwt.sign({userId:user.id},process.env.JWT_SECRET,{
-                expiresIn:"5d"
+                expiresIn:"7d"
             })
 
-            res.status(201).json({token,msg:"login successfully"})
+            res.status(201).json({msg:"login successfully",token,user: {
+            _id: user._id,
+            name: user.name,
+            email: user.email
+        }})
         }
 
         else{
