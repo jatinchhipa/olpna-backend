@@ -1,4 +1,4 @@
-import mongoose , {model, mongo} from "mongoose";
+import mongoose , {model} from "mongoose";
 
 const {Schema} = mongoose;
 
@@ -50,6 +50,11 @@ const CourseSchema = new Schema({
         type:String
     },
 
-});
+
+},
+    {
+    timestamps: true
+    }
+);
 
 export default model('coursemodal',CourseSchema);

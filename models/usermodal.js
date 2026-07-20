@@ -31,6 +31,6 @@ const UserSchema = new Schema({
             required:true
         }
 
-})
+});
 
 export default model('usermodal',UserSchema);
